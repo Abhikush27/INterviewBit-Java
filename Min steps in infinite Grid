@@ -1,0 +1,19 @@
+public class Solution {
+    public int coverPoints(int[] A, int[] B) {
+        int prevx = A[0];
+        int prevy = B[0];
+        int n = A.length;
+        int sum =0;
+        for(int i=1;i<n;i++){
+            int curx = A[i];
+            int cury = B[i];
+            int diffx = Math.abs(curx-prevx);
+            int diffy = Math.abs(cury-prevy);
+            sum+=Math.max(diffx,diffy);
+             prevx = curx;
+        prevy = cury;
+        }
+       
+        return sum;
+    }
+}
