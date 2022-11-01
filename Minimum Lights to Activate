@@ -1,0 +1,41 @@
+public class Solution {
+    public int solve(int[] A, int B) {
+   int i = 0;  
+      
+        // computing size  
+        int n = A.length;  
+          
+        int count = 0;  
+          
+        while(i < n)  
+        {  
+            int current = -1;  
+            // computing range for light locate at the ith index  
+            int lft = Math.max(0, i - B + 1);  
+            int rgt = Math.min(n - 1, i + B - 1);  
+               
+            for(int l = rgt; l >= lft; l--)  
+            {  
+                if(A[l] == 1)  
+                {  
+                    // increase the count by 1  
+                    count = count + 1;  
+                      
+                    // we have illuminated the corridor till l + B  
+                    i = l + B;  
+                      
+                    // one light is found  
+                    current = 1;  
+                    break;  
+                }  
+  
+            }  
+              
+            if(current == -1)  
+            {  
+                return -1;  
+            }  
+        }  
+          return count;
+              }
+}
