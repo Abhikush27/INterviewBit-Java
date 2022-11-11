@@ -1,0 +1,11 @@
+public class Solution {
+    public int solve(int[] A) {
+        int first;
+        int last;
+        Arrays.sort(A);
+        int n =A.length;
+        first=A[0];
+        last =A[n-1];
+        return first+last;
+    }
+}
